@@ -3,4 +3,4 @@ project(DataStructures_Project4)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(DataStructures_Project4 main.cpp)
+add_executable(DataStructures_Project4 main.cpp ttree.h tnode.h)
