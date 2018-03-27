@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# IDE Files
+.idea/
+cmake-build-debug/
+.idea/
+.Spotlight-V100
+.Trashes
+*.zip
