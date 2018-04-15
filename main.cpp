@@ -7,17 +7,15 @@
 using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     char status = 'X';
     string keyword;
     ttree t = *new ttree();
-    cout << "### Autocorrect Tree ###" << endl;
-    cout << "# Please enter a valid command." << endl;
+    //cout << "### Autocorrect Tree ###" << endl;
+    //cout << "# Please enter a valid command." << endl;
     while(cin >> status) {
 
         switch (status) {
             case 'I' :
-//                getline(cin, keyword);
                 cin >> keyword;
                 t.insert(keyword);
                 break;
@@ -29,7 +27,7 @@ int main() {
                 break;
 
         }
-        cout << "# Please enter a valid command." << endl;
+        //cout << "# Please enter a valid command." << endl;
     }
 
 

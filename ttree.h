@@ -52,21 +52,18 @@ public:
     bool nextIsNull();
     void display();
     friend ostream& operator << (ostream& os, tnode& t) {
-
-        cout << "Printing Node" << endl;
-
         if(t.getWords() != nullptr)
         {
             auto it = t._words->begin();
             auto endIt = t._words->end();
 
             while (it != endIt) {
-                os << (*it) << " ";
+                os << " " << (*it);
                 ++it;
             }
-            os << endl;
-            os << t._nextLevel;
         }
+        //os << endl;
+        if(t._nextLevel != nullptr) os << *(t._nextLevel);
         return os;
     }
 };
@@ -122,7 +119,6 @@ void ttree::insert(string key) {
 
 ostream& operator << (std::ostream& os, ttree& tree)
 {
-    cout << "Printing Tree" << endl;
     for(int i=0; i< 26; i++)
     {
         if (tree._tnodes[i].getWords() == nullptr && tree._tnodes[i].getNext() == nullptr)
@@ -131,10 +127,13 @@ ostream& operator << (std::ostream& os, ttree& tree)
         }
         else
         {
-            //cout << "WHAT";
+
+            os << endl;
+
             for(int i=0; i < 3*(tree._currentDepth-1); i++) os << ' ';
 
             os << tree.toChar(i);
+
             os << tree._tnodes[i];
         }
     }
@@ -198,7 +197,6 @@ bool tnode::insert(string w, int level)
     }
 
     put(w); //Insert the given data.
-    display();
     return true;
 }
 /**
