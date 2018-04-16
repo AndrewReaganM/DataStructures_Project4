@@ -20,27 +20,23 @@ int main() {
                 t.insert(keyword);
                 break;
             case 'S' :
-                //search
+                cin >> keyword;
+                try {
+                    t.search(keyword);
+                }
+                catch(std::exception &e){
+                    cout << e.what();
+                }
+
+                t.search(keyword);
+                cout << endl; //???
                 break;
             case 'D' :
-                cout << t;
+                cout << t << endl;
                 break;
 
         }
         //cout << "# Please enter a valid command." << endl;
+        cout << endl;
     }
-
-
-
-
-    /*
-    t.insert("HELLO");
-    t.insert("HAMS");
-    t.insert("APRIL");
-    t.insert("AMY");
-    t.insert("KATIE");
-    t.insert("KENNETH");
-    t.insert("KATHERINE");
-    t.insert("KAKE");
-     */
 }
